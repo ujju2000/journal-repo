@@ -6,7 +6,10 @@
 
 <!-- <div class="container"> -->
     <%  for(let i =0;i<postArray.length ;i++) { %>
-        <h1> <%= postArray[i].title %> </h1>
+        <div class="heading">
+            <h1> <%= postArray[i].title %> </h1>
+            <a href = '/posts/<%= postArray[i]._id %>/delete' > <span class="material-icons">delete</span></a>
+        </div>
         <p><%= postArray[i].post.substring(1,100) + "..." %> <a href = "/posts/<%= postArray[i].title %>" >Read More</a></p>
     <%  } %>  
 

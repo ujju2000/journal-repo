@@ -38,7 +38,12 @@ app.get('/posts/:post', (req,res) => {
   }).catch((err) => console.log("not fetcing info"));
 
 })
+app.get('/posts/:post/delete', async (req,res) => {
+  let postParam = req.params.post;
 
+  await Journal.findByIdAndDelete(postParam);
+  res.redirect('/');
+})
 app.post('/compose' , (req,res) => {
   let userTitle = req.body.title;
   let userPost = req.body.post;
