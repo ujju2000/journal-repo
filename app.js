@@ -7,7 +7,7 @@ const _ = require('lodash');
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb+srv://ujjutarika35:Test123@cluster0.ublufxm.mongodb.net/dailyJournalDB');
-
+  
 const dailyJournal = mongoose.Schema({
   title : String,
   post : String
