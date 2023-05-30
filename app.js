@@ -7,7 +7,8 @@ const _ = require('lodash');
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb+srv://ujjutarika35:Test123@cluster0.ublufxm.mongodb.net/dailyJournalDB');
-  
+// mongoose.connect('mongodb://127.0.0.1:27017/dailyJournalDB');
+
 const dailyJournal = mongoose.Schema({
   title : String,
   post : String
@@ -75,7 +76,7 @@ app.get("/" , (req,res) => {
   }).catch((err) => console.log(err));
 })
 
-
-app.listen(process.env.PORT || 3000, function() {
+const port = process.env.PORT || 3000;
+app.listen(port, function() {
   console.log("Server started on port 3000");
 });
