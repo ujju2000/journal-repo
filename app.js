@@ -6,9 +6,9 @@ const ejs = require("ejs");
 const _ = require('lodash');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://ujjutarika35:Test123@cluster0.ublufxm.mongodb.net/dailyJournalDB');
+// mongoose.connect('mongodb+srv://ujjutarika35:Test123@cluster0.ublufxm.mongodb.net/dailyJournalDB');
 // mongoose.connect('mongodb://127.0.0.1:27017/dailyJournalDB');
-
+mongoose.connect('mongodb+srv://ujjutarika35:Test123@cluster0.ublufxm.mongodb.net/dailyJournalDB?retryWrites=true&w=majority');
 const dailyJournal = mongoose.Schema({
   title : String,
   post : String
@@ -53,7 +53,7 @@ app.post('/compose' , (req,res) => {
   })
   generalInfo.push(userInfo);
   // console.log(generalInfo);
-  journal.save();
+  journal.save(); 
 
   res.redirect('/');
 
